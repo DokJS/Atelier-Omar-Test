@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
+import { Player } from '../models/types'
 
 export default function useFetch(url: string) {
-    const [data, setData] = useState(null)
+    const [data, setData] = useState<{ players: Player[] } | null>(null)
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState('')
     useEffect(() => {
@@ -10,10 +11,12 @@ export default function useFetch(url: string) {
             try {
                 const response = await fetch(url)
                 if (!response.ok) {
-                    throw new Error('Something went wrong! try again later')
+                    throw new Error(
+                        'Sorry! the service is not available, try again later.'
+                    )
                 }
                 const json = await response.json()
-                setData(json.players)
+                setData(json)
             } catch (error) {
                 if (error instanceof Error) {
                     setError(error.message)
