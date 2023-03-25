@@ -3,7 +3,7 @@ export type Player = {
     firstname: string
     lastname: string
     shortname: string
-    sex: 'M' | 'F'
+    sex: string
     country: {
         picture: string
         code: string

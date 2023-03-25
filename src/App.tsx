@@ -3,19 +3,31 @@ import SearchBar from './components/SearchBar'
 import CardContainer from './components/CardContainer'
 import Loader from './components/Loader'
 import useFetch from './hooks/useFetch'
+import { endpoints } from './services/api'
 import './App.scss'
-const URL = ' https://data.latelier.co/training/tennis_stats/headtohead.json'
+
+const errorMsgStyle = {
+    color: 'white',
+    position: 'absolute',
+    top: '50%',
+    left: '5%',
+} as React.CSSProperties
+const loaderStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '15%',
+} as React.CSSProperties
+
 function App() {
-    const { data, isLoading, error } = useFetch(URL)
+    const url = endpoints.getPlayersData()
+    const { data, isLoading, error } = useFetch(url)
     const [inputValue, setInputValue] = useState('')
-    console.log(data)
+
     if (isLoading) {
-        return (
-            <Loader style={{ position: 'absolute', top: '50%', left: '15%' }} />
-        )
+        return <Loader style={loaderStyle} />
     }
     if (error) {
-        return <h1>{error}</h1>
+        return <h1 style={errorMsgStyle}>{error}</h1>
     }
     return (
         data && (
@@ -24,7 +36,7 @@ function App() {
                     inputValue={inputValue}
                     setInputValue={setInputValue}
                 />
-                <CardContainer data={data} />
+                <CardContainer data={data.players} />
             </div>
         )
     )

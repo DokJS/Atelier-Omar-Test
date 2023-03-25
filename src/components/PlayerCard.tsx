@@ -2,13 +2,19 @@ import { Player } from '../models/types'
 import '../styles/Card.scss'
 interface PlayerCardProps {
     player: Player
+    setSelectedPlayerIndex: React.Dispatch<React.SetStateAction<number | null>>
+    index: number
 }
-export default function PlayerCard({ player }: PlayerCardProps) {
+export default function PlayerCard({
+    player,
+    setSelectedPlayerIndex,
+    index,
+}: PlayerCardProps) {
     const { firstname, lastname, data, country, picture } = player
     const { rank, points } = data
     const { code } = country
     return (
-        <div className="card">
+        <div className="card" onClick={() => setSelectedPlayerIndex(index)}>
             <div className="card__img">
                 <img src={picture} alt={firstname + lastname} />
             </div>
