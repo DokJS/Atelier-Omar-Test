@@ -4,7 +4,7 @@ import CardContainer from './components/CardContainer'
 import Loader from './components/Loader'
 import useFetch from './hooks/useFetch'
 import { endpoints } from './services/api'
-import './App.scss'
+import './styles/App.scss'
 
 const errorMsgStyle = {
     color: 'white',
