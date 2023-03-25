@@ -13,7 +13,7 @@ export default function useFetch(url: string) {
                     throw new Error('Something went wrong! try again later')
                 }
                 const json = await response.json()
-                setData(json)
+                setData(json.players)
             } catch (error) {
                 if (error instanceof Error) {
                     setError(error.message)
@@ -21,6 +21,7 @@ export default function useFetch(url: string) {
                     setError(error as string)
                 }
             } finally {
+                await new Promise((resolve) => setTimeout(resolve, 2000)) // simulate loading time
                 setIsLoading(false)
             }
         }
