@@ -43,7 +43,7 @@ export default function LargePlayerCard({ player }: LargePlayerCardProps) {
                                     RANK
                                 </div>
                                 <div className="col__container__subtitle">
-                                    {rank}
+                                    #{rank}
                                 </div>
                             </div>
                             <div className="col__container">

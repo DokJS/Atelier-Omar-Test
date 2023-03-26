@@ -9,7 +9,7 @@ describe('SearchBar', () => {
             screen.getByPlaceholderText('Rechercher un joueur')
         ).toBeInTheDocument()
     })
-    it('should call the function when the user types', () => {
+    it('should call the function each time the user types', () => {
         const setInputValue = jest.fn()
         render(<SearchBar inputValue="value" setInputValue={setInputValue} />)
         userEvent.type(
