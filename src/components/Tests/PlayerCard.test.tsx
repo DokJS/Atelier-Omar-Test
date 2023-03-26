@@ -39,7 +39,7 @@ describe('PlayerCard', () => {
         expect(screen.getByText('Novak Djokovic')).toBeInTheDocument()
         expect(screen.getByText('#2')).toBeInTheDocument()
         expect(screen.getByText('2542')).toBeInTheDocument()
-        expect(screen.getByText('SRB')).toBeInTheDocument()
+        expect(screen.getByText('Serbia')).toBeInTheDocument()
     })
     test('should call the click handler when the user clicks on the card', () => {
         render(
