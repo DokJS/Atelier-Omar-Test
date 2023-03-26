@@ -1,4 +1,5 @@
 import { Player } from '../models/types'
+import clm from 'country-locale-map'
 import '../styles/Card.scss'
 interface PlayerCardProps {
     player: Player
@@ -33,7 +34,9 @@ export default function PlayerCard({
                     </div>
                     <div className="col">
                         <div className="card__col--body__subtitle">Country</div>
-                        <div className="card__col--body__info">{code}</div>
+                        <div className="card__col--body__info">
+                            {clm.getCountryNameByAlpha3(code) || code}
+                        </div>
                     </div>
                 </div>
             </div>
