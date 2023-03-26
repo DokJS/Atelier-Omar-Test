@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Player } from '../models/types'
-
+import { Response } from '../models/types'
 export default function useFetch(url: string) {
-    const [data, setData] = useState<{ players: Player[] } | null>(null)
+    const [data, setData] = useState<Response | null>(null)
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState('')
     useEffect(() => {

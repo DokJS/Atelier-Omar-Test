@@ -18,3 +18,5 @@ export type Player = {
         last: number[]
     }
 }
+
+export type Response = { players: Player[] }
