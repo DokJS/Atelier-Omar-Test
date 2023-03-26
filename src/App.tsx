@@ -1,17 +1,12 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import SearchBar from './components/SearchBar'
 import CardContainer from './components/CardContainer'
 import Loader from './components/Loader'
+import ErrorFallback from './components/ErrorFallback'
 import useFetch from './hooks/useFetch'
 import { endpoints } from './services/api'
 import './styles/App.scss'
 
-const errorMsgStyle = {
-    color: 'white',
-    position: 'absolute',
-    top: '50%',
-    left: '5%',
-} as React.CSSProperties
 const loaderStyle = {
     position: 'absolute',
     top: '50%',
@@ -22,12 +17,20 @@ function App() {
     const url = endpoints.getPlayersData()
     const { data, isLoading, error } = useFetch(url)
     const [inputValue, setInputValue] = useState('')
+    const resetErrorBoundary = useCallback(() => {
+        window.location.reload() // for reload the page
+    }, [])
 
     if (isLoading) {
         return <Loader style={loaderStyle} />
     }
     if (error) {
-        return <h1 style={errorMsgStyle}>{error}</h1>
+        return (
+            <ErrorFallback
+                error={error}
+                resetErrorBoundary={resetErrorBoundary}
+            />
+        )
     }
     return (
         data && (
