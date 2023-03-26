@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Response } from '../models/types'
+import { handleErrorResponseStatus, handleErrorThrown } from '../utils/helper'
+
 export default function useFetch(url: string) {
     const [data, setData] = useState<Response | null>(null)
     const [isLoading, setIsLoading] = useState(false)
@@ -10,18 +12,12 @@ export default function useFetch(url: string) {
             try {
                 const response = await fetch(url)
                 if (!response.ok) {
-                    throw new Error(
-                        'Sorry! the service is not available, try again later.'
-                    )
+                    handleErrorResponseStatus(response.status)
                 }
                 const json = await response.json()
                 setData(json)
             } catch (error) {
-                if (error instanceof Error) {
-                    setError(error.message)
-                } else {
-                    setError(error as string)
-                }
+                handleErrorThrown(error, setError)
             } finally {
                 await new Promise((resolve) => setTimeout(resolve, 2000)) // simulate loading time
                 setIsLoading(false)
