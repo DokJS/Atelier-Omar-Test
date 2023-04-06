@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The deployed version is available at : https://dokjs.github.io/Atelier-Omar-Test/
 
 ## Available Scripts
 
