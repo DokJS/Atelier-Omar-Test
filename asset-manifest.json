@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.ca1e08a6.css",
-    "main.js": "/static/js/main.f784e634.js",
-    "static/js/787.90bc1bdc.chunk.js": "/static/js/787.90bc1bdc.chunk.js",
-    "static/media/home-layer-bg.png": "/static/media/home-layer-bg.67fa19f5af211c5478ad.png",
-    "static/media/Montserrat-Bold.ttf": "/static/media/Montserrat-Bold.079ca05d3ded9bc107ab.ttf",
-    "static/media/Mulish-Bold.ttf": "/static/media/Mulish-Bold.3fd0f50bd4908ad371c2.ttf",
-    "index.html": "/index.html",
-    "main.ca1e08a6.css.map": "/static/css/main.ca1e08a6.css.map",
-    "main.f784e634.js.map": "/static/js/main.f784e634.js.map",
-    "787.90bc1bdc.chunk.js.map": "/static/js/787.90bc1bdc.chunk.js.map"
+    "main.css": "/Atelier-Omar-Test/static/css/main.982698bc.css",
+    "main.js": "/Atelier-Omar-Test/static/js/main.746f77f1.js",
+    "static/js/787.90bc1bdc.chunk.js": "/Atelier-Omar-Test/static/js/787.90bc1bdc.chunk.js",
+    "static/media/home-layer-bg.png": "/Atelier-Omar-Test/static/media/home-layer-bg.67fa19f5af211c5478ad.png",
+    "static/media/Montserrat-Bold.ttf": "/Atelier-Omar-Test/static/media/Montserrat-Bold.079ca05d3ded9bc107ab.ttf",
+    "static/media/Mulish-Bold.ttf": "/Atelier-Omar-Test/static/media/Mulish-Bold.3fd0f50bd4908ad371c2.ttf",
+    "index.html": "/Atelier-Omar-Test/index.html",
+    "main.982698bc.css.map": "/Atelier-Omar-Test/static/css/main.982698bc.css.map",
+    "main.746f77f1.js.map": "/Atelier-Omar-Test/static/js/main.746f77f1.js.map",
+    "787.90bc1bdc.chunk.js.map": "/Atelier-Omar-Test/static/js/787.90bc1bdc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca1e08a6.css",
-    "static/js/main.f784e634.js"
+    "static/css/main.982698bc.css",
+    "static/js/main.746f77f1.js"
   ]
 }
