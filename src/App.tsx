@@ -39,7 +39,7 @@ function App() {
                     inputValue={inputValue}
                     setInputValue={setInputValue}
                 />
-                <CardContainer data={data.players} />
+                <CardContainer data={data.players} inputValue={inputValue} />
             </div>
         )
     )
